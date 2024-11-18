@@ -95,4 +95,15 @@ class MultiplicationTableBuilderTest {
         //then
         assertFalse(isStartValueSmallerEndValue);
     }
+
+    @Test
+    void should_return_true_when_isValid_given_start_number_2_end_number_4() {
+        //given
+        int startNumber = 2;
+        int endNumber = 4;
+        //when
+        boolean isValid = MultiplicationTableBuilder.isValid(startNumber, endNumber);
+        //then
+        assertTrue(isValid);
+    }
 }

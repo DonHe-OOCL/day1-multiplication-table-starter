@@ -23,5 +23,9 @@ public class MultiplicationTableBuilder {
         return startNumber <= endNumber;
     }
 
+    public static boolean isValid(int startNumber, int endNumber) {
+        return isValidInputOnRange(startNumber) && isValidInputOnRange(endNumber) && isStartValueSmallerEndValue(startNumber, endNumber);
+    }
+
 
 }
