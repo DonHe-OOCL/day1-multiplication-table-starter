@@ -27,5 +27,14 @@ public class MultiplicationTableBuilder {
         return isValidInputOnRange(startNumber) && isValidInputOnRange(endNumber) && isStartValueSmallerEndValue(startNumber, endNumber);
     }
 
-
+    public static String buildMultiplicationRow(int startNumber, int endNumber) {
+        StringBuilder builder = new StringBuilder();
+        for (int i = startNumber; i <= endNumber; i++) {
+            builder.append(i).append("*").append(endNumber).append("=").append(i * endNumber);
+            if (i != endNumber) {
+                builder.append("\t");
+            }
+        }
+        return builder.toString();
+    }
 }
