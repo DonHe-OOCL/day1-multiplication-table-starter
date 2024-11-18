@@ -73,4 +73,26 @@ class MultiplicationTableBuilderTest {
         //then
         assertFalse(isValid);
     }
+
+    @Test
+    void should_return_true_when_build_given_number_2_and_4() {
+        //given
+        int startNumber = 2;
+        int endNumber = 4;
+        //when
+        boolean isStartValueSmallerEndValue = MultiplicationTableBuilder.isStartValueSmallerEndValue(startNumber, endNumber);
+        //then
+        assertTrue(isStartValueSmallerEndValue);
+    }
+
+    @Test
+    void should_return_true_when_build_given_number_6_and_4() {
+        //given
+        int startNumber = 6;
+        int endNumber = 4;
+        //when
+        boolean isStartValueSmallerEndValue = MultiplicationTableBuilder.isStartValueSmallerEndValue(startNumber, endNumber);
+        //then
+        assertFalse(isStartValueSmallerEndValue);
+    }
 }

@@ -18,4 +18,10 @@ public class MultiplicationTableBuilder {
     public static boolean isValidInputOnRange(int number) {
         return number > 1 && number <= 1000;
     }
+
+    public static boolean isStartValueSmallerEndValue(int startNumber, int endNumber) {
+        return startNumber <= endNumber;
+    }
+
+
 }
