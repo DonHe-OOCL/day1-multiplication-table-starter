@@ -14,4 +14,8 @@ public class MultiplicationTableBuilder {
     public String build(int start, int end) {
         return "";
     }
+
+    public static boolean isValidInputOnRange(int number) {
+        return number > 1 && number <= 1000;
+    }
 }

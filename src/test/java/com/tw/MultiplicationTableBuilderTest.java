@@ -2,8 +2,7 @@ package com.tw;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 class MultiplicationTableBuilderTest {
     @Test
@@ -53,5 +52,25 @@ class MultiplicationTableBuilderTest {
         String multiplicationTable = builder.build(start, end);
         //then
         assertNull(multiplicationTable);
+    }
+
+    @Test
+    void should_return_true_when_build_given_number_2() {
+        //given
+        int number = 2;
+        //when
+        boolean isValid = MultiplicationTableBuilder.isValidInputOnRange(number);
+        //then
+        assertTrue(isValid);
+    }
+
+    @Test
+    void should_return_true_when_build_given_number_10001() {
+        //given
+        int number = 10001;
+        //when
+        boolean isValid = MultiplicationTableBuilder.isValidInputOnRange(number);
+        //then
+        assertFalse(isValid);
     }
 }
