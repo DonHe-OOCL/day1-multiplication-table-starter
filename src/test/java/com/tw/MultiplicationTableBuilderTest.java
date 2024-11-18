@@ -55,7 +55,7 @@ class MultiplicationTableBuilderTest {
     }
 
     @Test
-    void should_return_true_when_build_given_number_2() {
+    void should_return_true_when_isValidInputOnRange_given_number_2() {
         //given
         int number = 2;
         //when
@@ -65,7 +65,7 @@ class MultiplicationTableBuilderTest {
     }
 
     @Test
-    void should_return_true_when_build_given_number_10001() {
+    void should_return_true_when_isValidInputOnRange_given_number_10001() {
         //given
         int number = 10001;
         //when
@@ -75,7 +75,7 @@ class MultiplicationTableBuilderTest {
     }
 
     @Test
-    void should_return_true_when_build_given_number_2_and_4() {
+    void should_return_true_when_isStartValueSmallerEndValue_given_number_2_and_4() {
         //given
         int startNumber = 2;
         int endNumber = 4;
@@ -86,7 +86,7 @@ class MultiplicationTableBuilderTest {
     }
 
     @Test
-    void should_return_true_when_build_given_number_6_and_4() {
+    void should_return_false_when_isStartValueSmallerEndValue_given_number_6_and_4() {
         //given
         int startNumber = 6;
         int endNumber = 4;
