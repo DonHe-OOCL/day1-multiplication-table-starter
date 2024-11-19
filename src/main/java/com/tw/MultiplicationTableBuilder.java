@@ -7,6 +7,9 @@ import java.util.stream.IntStream;
 
 public class MultiplicationTableBuilder {
 
+    private static int MIN_NUMBER = 1;
+    private static int MAX_NUMBER = 1000;
+
     public static void main(String[] args) {
         MultiplicationTableBuilder builder = new MultiplicationTableBuilder();
         int start = 2;
@@ -25,7 +28,7 @@ public class MultiplicationTableBuilder {
 
 
     public static boolean isValidInputOnRange(int number) {
-        return number > 1 && number <= 1000;
+        return number > MIN_NUMBER && number <= MAX_NUMBER;
     }
 
     public static boolean isStartValueSmallerEndValue(int startNumber, int endNumber) {
@@ -46,6 +49,6 @@ public class MultiplicationTableBuilder {
 
         return IntStream.rangeClosed(startNumber, endNumber)
                 .mapToObj(i -> buildMultiplicationRow(startNumber, i))
-                .collect(Collectors.joining("\r\n")) + "\r\n";
+                .collect(Collectors.joining(System.lineSeparator())) + System.lineSeparator();
     }
 }
