@@ -7,8 +7,8 @@ import java.util.stream.IntStream;
 
 public class MultiplicationTableBuilder {
 
-    private static int MIN_NUMBER = 1;
-    private static int MAX_NUMBER = 1000;
+    private final static int MIN_NUMBER = 1;
+    private final static int MAX_NUMBER = 1000;
 
     public static void main(String[] args) {
         MultiplicationTableBuilder builder = new MultiplicationTableBuilder();
