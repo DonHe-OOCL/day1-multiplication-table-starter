@@ -65,7 +65,7 @@ class MultiplicationTableBuilderTest {
     }
 
     @Test
-    void should_return_true_when_isValidInputOnRange_given_number_10001() {
+    void should_return_false_when_isValidInputOnRange_given_number_10001() {
         //given
         int number = 10001;
         //when

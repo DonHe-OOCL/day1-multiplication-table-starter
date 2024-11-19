@@ -2,6 +2,8 @@ package com.tw;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class MultiplicationTableBuilder {
 
@@ -35,25 +37,15 @@ public class MultiplicationTableBuilder {
     }
 
     public static String buildMultiplicationRow(int startNumber, int endNumber) {
-        StringBuilder builder = new StringBuilder();
-        for (int i = startNumber; i <= endNumber; i++) {
-            builder.append(i).append("*").append(endNumber).append("=").append(i * endNumber);
-            if (i != endNumber) {
-                builder.append(" ");
-            }
-        }
-        return builder.toString();
+        return IntStream.rangeClosed(startNumber, endNumber)
+                .mapToObj(i -> i + "*" + endNumber + "=" + i * endNumber)
+                .collect(Collectors.joining(" "));
     }
 
     public static String buildMultiplicationTable(int startNumber, int endNumber) {
-        List<String> rows = new ArrayList<>();
-        for (int i = startNumber; i <= endNumber; i++) {
-            rows.add(buildMultiplicationRow(startNumber, i));
-        }
-        StringBuilder builder = new StringBuilder();
-        for (String row : rows) {
-            builder.append(row).append("\r\n");
-        }
-        return builder.toString();
+
+        return IntStream.rangeClosed(startNumber, endNumber)
+                .mapToObj(i -> buildMultiplicationRow(startNumber, i))
+                .collect(Collectors.joining("\r\n")) + "\r\n";
     }
 }
